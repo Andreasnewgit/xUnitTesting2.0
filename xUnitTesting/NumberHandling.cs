@@ -13,7 +13,7 @@ namespace xUnitTesting
         public int Addition(int[] input)
         {
 
-            int result = 0;
+            int result = input[0];
             for (int i = 0; i < input.Length; i++) {
                 result = result + input[i];
             }
@@ -34,22 +34,32 @@ namespace xUnitTesting
         //Multiplication  
         public int Multiplication(int[] input)
         {
-            int result = 0;
-            for (int i = 0; i < input.Length; i++)
+            int result = input[0];
+            for (int i = 1; i < input.Length; i++)
             {
                 result = result * input[i];
             }
             return result;
         }
+        public int Multiplication(int myIntOne, int myIntTwo)
+        {
+           return myIntOne * myIntTwo;
+        }
+
         //Division  
         public int Division(int[] input)
         {
-            int result = 0;
-            for (int i = 0; i < input.Length; i++)
+            int result = input[0];
+            for (int i = 1; i < input.Length; i++)
             {
                 result = result / input[i];
             }
             return result;
+        }
+
+        public int Division(int myIntOne, int myIntTwo)
+        {
+            return myIntOne / myIntTwo;
         }
 
         // Overloaded Addition

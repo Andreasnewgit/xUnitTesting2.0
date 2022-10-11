@@ -41,7 +41,6 @@ namespace CalculatorApp
 
 
 
-
                 int result = 0;
                 switch (action.ToLower())
                 {

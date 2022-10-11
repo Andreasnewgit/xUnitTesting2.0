@@ -9,46 +9,54 @@ namespace CalculatorTests
       
        NumberHandling numberHandling = new NumberHandling();
 
-        [Fact]
-        // Expect to pass.
-        public void AdditionTestOne()
-        {
-            Assert.Equal(4, numberHandling.Addition(2, 2));
-        }
-
-  
-        // Expect to pass.
-        [Fact]
-        public void SubtractionTestOne()
-        {
-            Assert.Equal(4, numberHandling.Subtraction(12, 8, 0));
-        }
-
-
-        // Expect to pass.
-        [Fact]
-        public void MultiplicationTestOne()
-        {
-            Assert.Equal(60, numberHandling.Multiplication(5, 12));
-           
-        }
-
-
-        // Expect to pass.
-        [Fact]
-        public void DivisionTestOne()
-        {
-            Assert.Equal(10, numberHandling.Division(100, 10));
-
-        }
+        //[Fact]
+        //// Expect to pass.
+        //public void AdditionTestOne()
+        //{
+        //    Assert.Equal(4, numberHandling.Addition(2, 2));
+        //}
 
         [Theory]
-        [InlineData(2, 2, 0, 4)]
-        void AdditionTest(int input_1, int input_2, int input_3, int expected)
+        [InlineData(10, 5, 2)]
+        void DivisionTest(int input_1, int input_2, int expected)
         {
             int x1 = input_1;
             int x2 = input_2;
-            int x3 = input_3;
+            int result = numberHandling.Division(x1, x2);
+
+            Assert.Equal(expected, result);
+        }
+
+
+        [Theory]
+        [InlineData(10, 5, 50)]
+        void MultiplicationTest(int input_1, int input_2, int expected)
+        {
+            int x1 = input_1;
+            int x2 = input_2;
+            int result = numberHandling.Multiplication(x1, x2);
+
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData(2, 2, 0)]
+        void SubtractionTest(int input_1, int input_2, int expected)
+        {
+            int x1 = input_1;
+            int x2 = input_2;
+            int result = numberHandling.Subtraction(x1, x2);
+
+            Assert.Equal(expected, result);
+        }
+
+
+        [Theory]
+        [InlineData(2, 2, 4)]
+        void AdditionTest(int input_1, int input_2, int expected)
+        {
+            int x1 = input_1;
+            int x2 = input_2;          
             int result = numberHandling.Addition(x1, x2);
 
             Assert.Equal(expected, result);
@@ -70,44 +78,6 @@ namespace CalculatorTests
         //    Assert.Equal(expected, actual, 0);
         //}
 
-
-
-
-
-        // Methods To Be Tested
-        //________________________________________________________________________________________
-        //________________________________________________________________________________________
-        //________________________________________________________________________________________
-        // Methods To Be Tested
-
-
-        ////Addition  
-        //public static int Addition(int input_1, int input_2)
-        //{
-        //    int result = input_1 + input_2;
-        //    return result;
-        //}
-
-        ////Substraction  
-        //public static int Subtraction(int input_1, int input_2)
-        //{
-        //    int result = input_1 - input_2;
-        //    return result;
-        //}
-
-        ////Multiplication  
-        //public static int Multiplication(int input_1, int input_2)
-        //{
-        //    int result = input_1 * input_2;
-        //    return result;
-        //}
-
-        ////Division  
-        //public static int Division(int input_1, int input_2)
-        //{
-        //    int result = input_1 / input_2;
-        //    return result;
-        //}
 
 
     }
